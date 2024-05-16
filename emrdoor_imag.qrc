@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="image">
+    <file>image/RedOff.png</file>
+    <file>image/RedOn.png</file>
+    <file>image/play-button.png</file>
+    <file>image/stop.png</file>
+    <file>image/stop-button.png</file>
+    <file>image/link.png</file>
+    <file>image/link1.png</file>
+    <file>image/settings.png</file>
+  </qresource>
+</RCC>
