@@ -4,6 +4,22 @@ from PySide6.QtCore import QThread, Signal
 from EMRDoor_ui import Ui_MainWindow
 import serial
 import serial.tools.list_ports
+import emrdoor_imag_rc
+
+
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
+    QCursor, QFont, QFontDatabase, QGradient,
+    QIcon, QImage, QKeySequence, QLinearGradient,
+    QPainter, QPalette, QPixmap, QRadialGradient,
+    QTransform)
+from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QComboBox,
+    QDockWidget, QFrame, QGridLayout, QHBoxLayout,
+    QHeaderView, QLabel, QMainWindow, QPushButton,
+    QSizePolicy, QStatusBar, QTableWidget, QTableWidgetItem,
+    QWidget)
 
 class SerialReadThread(QThread):
     data_received = Signal(str)
@@ -36,15 +52,32 @@ class MainWindow(QMainWindow):
 
         # 상태바 추가
         self.statusBar().showMessage("Ready")
-
+        self.statusBar().setStyleSheet("QStatusBar{background-color: rgb(172, 157, 255) ;}")
+        
+        
         # 버튼 클릭 시 호출할 슬롯 연결
         self.ui.pushButton.clicked.connect(self.on_button_click)
-        # self.ui.pushButton_2.clicked.connect(self.close)
         self.ui.pushButton_2.clicked.connect(self.close_serial)
+        self.ui.pushButton_3.clicked.connect(self.setting_serial)
+        self.ui.pushButton_4.clicked.connect(self. setting_serial)
+        self.ui.OpenAllBt.clicked.connect(self. sendAllDoorOpen)
+        self.ui.ByeBt.clicked.connect(self. close)
+        
+        # self.ui.tableWidget
+        
+   
+        self.item = QTableWidgetItem()
+        pixmap = QPixmap(u":/image/image/RedOff.png")  # Replace with the path to your image
+        self.item.setIcon(pixmap)
+        self.ui.tableWidget.setItem(0, 0, self.item)
+        
+        # 버튼 Enable setting 
+        self.ui.OpenAllBt.setEnabled(False)
 
         # ComboBox에 COM 포트 목록 추가
         self.populate_com_ports()
         self.ui.pushButton_2.hide()
+        self.ui.dockWidget_2.hide()
 
         # 시리얼 객체 초기화
         self.serial_connection = None
@@ -77,6 +110,10 @@ class MainWindow(QMainWindow):
             self.serial_thread = SerialReadThread(self.serial_connection)
             self.serial_thread.data_received.connect(self.handle_serial_data)
             self.serial_thread.start()
+            
+            # Enable setting 
+            self.ui.pushButton_3.setEnabled(False)
+            self.ui.OpenAllBt.setEnabled(True)
         except serial.SerialException as e:
             self.statusBar().showMessage(f"Failed to connect to {port_name}", 2000)
             QMessageBox.critical(self, "Error", f"Failed to connect to {port_name}\n{str(e)}")
@@ -92,14 +129,8 @@ class MainWindow(QMainWindow):
         else:
             print(f"Received data: {data}")
 
-    def closeEvent(self, event):
-        if self.serial_thread and self.serial_thread.isRunning():
-            self.serial_thread.stop()
-            self.serial_thread.wait()
-        if self.serial_connection and self.serial_connection.is_open:
-            self.serial_connection.close()
-        event.accept()
         
+    # 시리얼 통신 종료 
     def close_serial(self):
         if self.serial_thread and self.serial_thread.isRunning():
             self.serial_thread.stop()
@@ -109,7 +140,27 @@ class MainWindow(QMainWindow):
 
         self.ui.pushButton.show()
         self.ui.pushButton_2.hide()
+        #button Enable setting 
+        self.ui.pushButton_3.setEnabled(True)
+        self.ui.OpenAllBt.setEnabled(False)
+        
         self.statusBar().showMessage(f"Disconnected from COM port ", 2000)
+    
+    def sendAllDoorOpen(self):
+        print(f"all Door Open")
+        
+    def setting_serial(self):
+        if self.ui.dockWidget_2.isVisible():
+            self.ui.dockWidget_2.hide()
+            self.ui.pushButton_3.setEnabled(True)
+            self.ui.pushButton.setEnabled(True)
+        else:
+            self.ui.dockWidget_2.show()
+            self.ui.pushButton_3.setEnabled(False)
+            self.ui.pushButton.setEnabled(False)
+        
+ 
+        
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
