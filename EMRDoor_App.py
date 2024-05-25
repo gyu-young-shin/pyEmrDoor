@@ -68,8 +68,16 @@ class MainWindow(QMainWindow):
    
         self.item = QTableWidgetItem()
         pixmap = QPixmap(u":/image/image/RedOff.png")  # Replace with the path to your image
-        self.item.setIcon(pixmap)
-        self.ui.tableWidget.setItem(0, 0, self.item)
+        self.item.setIcon(QIcon(pixmap))
+        self.item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)  # Center the item in the cell
+        self.ui.tableWidget.setItem(0, 1, self.item)
+        self.ui.tableWidget.setIconSize(QSize(32, 32))  # Set icon size
+        self.ui.tableWidget.setRowHeight(0, 40)  # Set row height
+        self.ui.tableWidget.setColumnWidth(1, 40)  # Set column width
+
+        # Additionally, if you want to center the icon itself, set the horizontal and vertical alignment of the item:
+        self.ui.tableWidget.item(0, 1).setTextAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
+
         
         # 버튼 Enable setting 
         self.ui.OpenAllBt.setEnabled(False)
