@@ -17,10 +17,9 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QComboBox,
-    QDockWidget, QFrame, QGridLayout, QHBoxLayout,
-    QHeaderView, QLabel, QMainWindow, QPushButton,
-    QSizePolicy, QStatusBar, QTableWidget, QTableWidgetItem,
-    QWidget)
+    QDockWidget, QFrame, QHBoxLayout, QHeaderView,
+    QLabel, QMainWindow, QPushButton, QSizePolicy,
+    QStatusBar, QTableWidget, QTableWidgetItem, QWidget)
 import emrdoor_imag_rc
 
 class Ui_MainWindow(object):
@@ -28,7 +27,7 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(1195, 900)
+        MainWindow.resize(996, 900)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -54,7 +53,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         self.pushButton_3.setFont(font)
         icon1 = QIcon()
-        icon1.addFile(u":/image/image/free-icon-gears-416153.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/image/image/settings.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_3.setIcon(icon1)
         self.pushButton_3.setIconSize(QSize(32, 32))
 
@@ -74,7 +73,7 @@ class Ui_MainWindow(object):
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setFont(font)
         icon3 = QIcon()
-        icon3.addFile(u":/image/image/free-icon-right-arrows-6776011.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u":/image/image/play-button.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton.setIcon(icon3)
         self.pushButton.setIconSize(QSize(32, 32))
 
@@ -120,114 +119,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.ByeBt)
 
-        self.gridLayoutWidget = QWidget(self.centralwidget)
-        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(150, 130, 711, 251))
-        self.gridLayout = QGridLayout(self.gridLayoutWidget)
-        self.gridLayout.setSpacing(20)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(20, 10, 20, 10)
-        self.label_9 = QLabel(self.gridLayoutWidget)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_9.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_9, 0, 4, 1, 1)
-
-        self.label_7 = QLabel(self.gridLayoutWidget)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_7.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_7, 0, 0, 1, 1)
-
-        self.label_6 = QLabel(self.gridLayoutWidget)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_6.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_6, 1, 1, 1, 1)
-
-        self.label_5 = QLabel(self.gridLayoutWidget)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_5.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_5, 1, 6, 1, 1)
-
-        self.label_4 = QLabel(self.gridLayoutWidget)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_4.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_4, 1, 4, 1, 1)
-
-        self.label_3 = QLabel(self.gridLayoutWidget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setPixmap(QPixmap(u":/image/image/GreenOn.png"))
-        self.label_3.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_3, 1, 2, 1, 1)
-
-        self.label_8 = QLabel(self.gridLayoutWidget)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_8.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_8, 1, 5, 1, 1)
-
-        self.label = QLabel(self.gridLayoutWidget)
-        self.label.setObjectName(u"label")
-        self.label.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label, 1, 3, 1, 1)
-
-        self.label_10 = QLabel(self.gridLayoutWidget)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_10.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_10, 1, 0, 1, 1)
-
-        self.label_11 = QLabel(self.gridLayoutWidget)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_11.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_11, 0, 1, 1, 1)
-
-        self.label_12 = QLabel(self.gridLayoutWidget)
-        self.label_12.setObjectName(u"label_12")
-        self.label_12.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_12.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_12, 0, 2, 1, 1)
-
-        self.label_13 = QLabel(self.gridLayoutWidget)
-        self.label_13.setObjectName(u"label_13")
-        self.label_13.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_13.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_13, 0, 3, 1, 1)
-
-        self.label_14 = QLabel(self.gridLayoutWidget)
-        self.label_14.setObjectName(u"label_14")
-        self.label_14.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_14.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_14, 2, 0, 1, 1)
-
-        self.label_15 = QLabel(self.gridLayoutWidget)
-        self.label_15.setObjectName(u"label_15")
-        self.label_15.setPixmap(QPixmap(u":/image/image/RedOff.png"))
-        self.label_15.setScaledContents(True)
-
-        self.gridLayout.addWidget(self.label_15, 3, 0, 1, 1)
-
         self.tableWidget = QTableWidget(self.centralwidget)
-        if (self.tableWidget.columnCount() < 9):
-            self.tableWidget.setColumnCount(9)
+        if (self.tableWidget.columnCount() < 8):
+            self.tableWidget.setColumnCount(8)
         __qtablewidgetitem = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
@@ -247,8 +141,19 @@ class Ui_MainWindow(object):
         if (self.tableWidget.rowCount() < 16):
             self.tableWidget.setRowCount(16)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(30, 90, 941, 631))
+        self.tableWidget.setGeometry(QRect(70, 120, 831, 631))
         self.tableWidget.setFont(font)
+        self.tableWidget.setStyleSheet(u"QHeaderView::section{\n"
+"font-weight:bold;\n"
+"background-color:black;\n"
+"color:white;\n"
+"}\n"
+"\n"
+"QTableWidget{\n"
+"alternate-background-color : #B0EDFB;\n"
+"background-color: #F4F9FA;\n"
+"\n"
+"}")
         self.tableWidget.setFrameShape(QFrame.Shape.Box)
         self.tableWidget.setFrameShadow(QFrame.Shadow.Plain)
         self.tableWidget.setLineWidth(3)
@@ -259,10 +164,10 @@ class Ui_MainWindow(object):
         self.tableWidget.setShowGrid(True)
         self.tableWidget.setGridStyle(Qt.PenStyle.DotLine)
         self.tableWidget.setSortingEnabled(False)
+        self.tableWidget.setColumnCount(8)
         MainWindow.setCentralWidget(self.centralwidget)
         self.tableWidget.raise_()
         self.horizontalLayoutWidget.raise_()
-        self.gridLayoutWidget.raise_()
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -312,20 +217,6 @@ class Ui_MainWindow(object):
         self.eventBt.setText(QCoreApplication.translate("MainWindow", u" \uc774 \ubca4 \ud2b8", None))
         self.OpenAllBt.setText(QCoreApplication.translate("MainWindow", u"\uc804\uccb4 \uac1c\ubc29", None))
         self.ByeBt.setText(QCoreApplication.translate("MainWindow", u" \uc885 \ub8cc", None))
-        self.label_9.setText("")
-        self.label_7.setText("")
-        self.label_6.setText("")
-        self.label_5.setText("")
-        self.label_4.setText("")
-        self.label_3.setText("")
-        self.label_8.setText("")
-        self.label.setText("")
-        self.label_10.setText("")
-        self.label_11.setText("")
-        self.label_12.setText("")
-        self.label_13.setText("")
-        self.label_14.setText("")
-        self.label_15.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"\uc704 \uce58 ", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)

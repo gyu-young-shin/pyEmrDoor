@@ -1,11 +1,14 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
-from PySide6.QtCore import QThread, Signal
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QDialog,QTableWidgetItem, QTableWidget,QVBoxLayout, QLabel, QWidget,QCheckBox
+from PySide6.QtGui import QPixmap
+from PySide6.QtCore import QThread, Signal,Qt, QSize
 from EMRDoor_ui import Ui_MainWindow
+from PySide6.QtGui import QPixmap, QIcon
+
 import serial
 import serial.tools.list_ports
 import emrdoor_imag_rc
-
+from EMRDoor01_ui import Ui_Dialog  # 변환된 EMRDoor01.py 파일을 import
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
@@ -20,6 +23,37 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QHeaderView, QLabel, QMainWindow, QPushButton,
     QSizePolicy, QStatusBar, QTableWidget, QTableWidgetItem,
     QWidget)
+
+
+class SubDialog(QDialog):
+
+    row_changed = Signal(int)  # Custom signal to notify row change
+
+    def __init__(self,rowcnt):
+        super(SubDialog, self).__init__()
+        self.rowcnt1 = rowcnt
+   
+        self.ut = Ui_Dialog()
+        self.ut.setupUi(self)
+
+        self.ut.pushButton.clicked.connect(self.change_row_and_close_dialog)
+        self.ut.pushButton_2.clicked.connect(self.close)
+
+        self.ut.spinBox.setValue(rowcnt)  # Set the value of the spin box
+        self.ut.spinBox.valueChanged.connect(self.update_rowcnt)
+     
+    def update_rowcnt(self, value):
+        # Update the rowcnt with the new value
+        self.rowcnt1 = int(value)
+        print(self.rowcnt1)
+    
+   
+    def change_row_and_close_dialog(self):
+        # Perform the desired action, e.g., changing the row
+        self.row_changed.emit(self.rowcnt1)
+        print("chageed good")
+        # Close the dialog
+        # self.close()
 
 class SerialReadThread(QThread):
     data_received = Signal(str)
@@ -60,16 +94,65 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_2.clicked.connect(self.close_serial)
         self.ui.pushButton_3.clicked.connect(self.setting_serial)
         self.ui.pushButton_4.clicked.connect(self. setting_serial)
+        self.ui.pushButton_5.clicked.connect(self. uiopen)
         self.ui.OpenAllBt.clicked.connect(self. sendAllDoorOpen)
         self.ui.ByeBt.clicked.connect(self. close)
         
         # self.ui.tableWidget
         
+
+                # self.ui.tableWidget.setColumnWidth(j, desired_size.width())
+
+        # checkBox = QCheckBox()
+        # widget = QWidget()
+
+
+        # layout = QVBoxLayout(widget)
+        # layout.addWidget(checkBox)
+        # layout.setAlignment(Qt.alignCenter)
+        # layout.setContentsMargins(0,0,0,0)
+
+        # self.ui.tableWidget.setCellWidget(0, 1, label)
+
+        # self.ui.tableWidget.setLayout(layout)
+        # layout.setAlignment(Qt.AlignCenter)  # Center the label within the widget
+
+        
+        # Adjust the row and column sizes to fit the label
    
-        self.item = QTableWidgetItem()
-        pixmap = QPixmap(u":/image/image/RedOff.png")  # Replace with the path to your image
-        self.item.setIcon(pixmap)
-        self.ui.tableWidget.setItem(0, 0, self.item)
+
+        # Insert the QLabel into the QTableWidget at position (0, 0)
+        # self.ui.tableWidget.setCellWidget(0, 0, label)
+        
+
+        # update_label_size(self.ui.tableWidget, 0, 0, label, pixmap)
+        # icon = QIcon(scaled_pixmap)
+        # # Set the icon in the table widget item
+        # self.item.setIcon(icon)
+        # self.ui.tableWidget.setItem(0, 0, self.item)
+        # self.ui.tableWidget.setRowHeight(0, desired_size.height())
+        # self.ui.tableWidget.setColumnWidth(0, desired_size.width())
+
+        self.ui.tableWidget.setRowCount(12)
+
+
+       
+        for i in range(12):
+            for j in range( 8):
+                # self.item = QTableWidgetItem()
+                pixmap = QPixmap(u":/image/image/RedOff.png")  # Replace with the path to your image
+                # Scale the pixmap to the desired size, for example, 32x32
+                desired_size = QSize(40, 40)
+                scaled_pixmap = pixmap.scaled(desired_size, Qt.KeepAspectRatio)
+
+                label = QLabel()
+                # label.setFixedSize(150, 150)  # QLabel의 크기를 200x200으로 설정
+                label.setPixmap(scaled_pixmap)
+                label.setAlignment(Qt.AlignCenter)
+                # label.setContentsMargins(5,5,5,5)
+                self.ui.tableWidget.setCellWidget(i, j, label)
+                self.ui.tableWidget.setRowHeight(i, desired_size.height()+5)
+
         
         # 버튼 Enable setting 
         self.ui.OpenAllBt.setEnabled(False)
@@ -158,8 +241,39 @@ class MainWindow(QMainWindow):
             self.ui.dockWidget_2.show()
             self.ui.pushButton_3.setEnabled(False)
             self.ui.pushButton.setEnabled(False)
+
+
+    def uiopen(self):
+        try:
+            rowcnt = self.ui.tableWidget.rowCount()
+            self.dialog = SubDialog(rowcnt)
+            self.dialog.row_changed.connect(self.update_table_row)  # Connect signal to slot
+            self.dialog.exec()
+            
+        except Exception as e:
+            print("An error occurred:", e)
         
- 
+    def update_table_row(self, row_changed):
+        self.ui.tableWidget.setRowCount(row_changed)  # Update the table row count
+        print(row_changed)
+        self.dialog.close()
+
+        for i in range( row_changed):
+            for j in range( 8):
+                # self.item = QTableWidgetItem()
+                pixmap = QPixmap(u":/image/image/RedOff.png")  # Replace with the path to your image
+                # Scale the pixmap to the desired size, for example, 32x32
+                desired_size = QSize(40, 40)
+                scaled_pixmap = pixmap.scaled(desired_size, Qt.KeepAspectRatio)
+
+                label = QLabel()
+                # label.setFixedSize(150, 150)  # QLabel의 크기를 200x200으로 설정
+                label.setPixmap(scaled_pixmap)
+                label.setAlignment(Qt.AlignCenter)
+                # label.setContentsMargins(5,5,5,5)
+                self.ui.tableWidget.setCellWidget(i, j, label)
+                self.ui.tableWidget.setRowHeight(i, desired_size.height()+5)
+
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)

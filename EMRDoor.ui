@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1195</width>
+    <width>996</width>
     <height>900</height>
    </rect>
   </property>
@@ -64,7 +64,7 @@
        </property>
        <property name="icon">
         <iconset resource="emrdoor_imag.qrc">
-         <normaloff>:/image/image/free-icon-gears-416153.png</normaloff>:/image/image/free-icon-gears-416153.png</iconset>
+         <normaloff>:/image/image/settings.png</normaloff>:/image/image/settings.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -108,7 +108,7 @@
        </property>
        <property name="icon">
         <iconset resource="emrdoor_imag.qrc">
-         <normaloff>:/image/image/free-icon-right-arrows-6776011.png</normaloff>:/image/image/free-icon-right-arrows-6776011.png</iconset>
+         <normaloff>:/image/image/play-button.png</normaloff>:/image/image/play-button.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -129,7 +129,7 @@
         <string>위치 설정</string>
        </property>
        <property name="icon">
-        <iconset resource="emrdoor_imag.qrc">
+        <iconset>
          <normaloff>:/image/image/free-icon-location-pin-8259448.png</normaloff>:/image/image/free-icon-location-pin-8259448.png</iconset>
        </property>
        <property name="iconSize">
@@ -151,7 +151,7 @@
         <string> 이 벤 트</string>
        </property>
        <property name="icon">
-        <iconset resource="emrdoor_imag.qrc">
+        <iconset>
          <normaloff>:/image/image/free-icon-log-file-format-8760478.png</normaloff>:/image/image/free-icon-log-file-format-8760478.png</iconset>
        </property>
        <property name="iconSize">
@@ -173,7 +173,7 @@
         <string>전체 개방</string>
        </property>
        <property name="icon">
-        <iconset resource="emrdoor_imag.qrc">
+        <iconset>
          <normaloff>:/image/image/free-icon-door-9050998.png</normaloff>:/image/image/free-icon-door-9050998.png</iconset>
        </property>
        <property name="iconSize">
@@ -195,7 +195,7 @@
         <string> 종 료</string>
        </property>
        <property name="icon">
-        <iconset resource="emrdoor_imag.qrc">
+        <iconset>
          <normaloff>:/image/image/free-icon-end-5129674.png</normaloff>:/image/image/free-icon-end-5129674.png</iconset>
        </property>
        <property name="iconSize">
@@ -208,221 +208,12 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="gridLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>130</y>
-      <width>711</width>
-      <height>251</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <property name="leftMargin">
-      <number>20</number>
-     </property>
-     <property name="topMargin">
-      <number>10</number>
-     </property>
-     <property name="rightMargin">
-      <number>20</number>
-     </property>
-     <property name="bottomMargin">
-      <number>10</number>
-     </property>
-     <property name="spacing">
-      <number>20</number>
-     </property>
-     <item row="0" column="4">
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="6">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="4">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/GreenOn.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="5">
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="3">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_10">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="label_11">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QLabel" name="label_12">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QLabel" name="label_13">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_14">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_15">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="emrdoor_imag.qrc">:/image/image/RedOff.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>90</y>
-      <width>941</width>
+      <x>70</x>
+      <y>120</y>
+      <width>831</width>
       <height>631</height>
      </rect>
     </property>
@@ -430,6 +221,19 @@
      <font>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QHeaderView::section{
+font-weight:bold;
+background-color:black;
+color:white;
+}
+
+QTableWidget{
+alternate-background-color : #B0EDFB;
+background-color: #F4F9FA;
+
+}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Shape::Box</enum>
@@ -463,6 +267,9 @@
     </property>
     <property name="sortingEnabled">
      <bool>false</bool>
+    </property>
+    <property name="columnCount">
+     <number>8</number>
     </property>
     <row/>
     <row/>
@@ -520,11 +327,9 @@
       <string>비상</string>
      </property>
     </column>
-    <column/>
    </widget>
    <zorder>tableWidget</zorder>
    <zorder>horizontalLayoutWidget</zorder>
-   <zorder>gridLayoutWidget</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QDockWidget" name="dockWidget_2">
