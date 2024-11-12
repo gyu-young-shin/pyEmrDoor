@@ -34,8 +34,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         icon = QIcon()
-        icon.addFile(u":/image/image/link.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/image/image/server_setting.png", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
+        MainWindow.setDocumentMode(False)
         self.actionConnect = QAction(MainWindow)
         self.actionConnect.setObjectName(u"actionConnect")
         self.centralwidget = QWidget(MainWindow)
@@ -83,7 +84,7 @@ class Ui_MainWindow(object):
         self.pushButton_5.setObjectName(u"pushButton_5")
         self.pushButton_5.setFont(font)
         icon4 = QIcon()
-        icon4.addFile(u":/image/image/free-icon-location-pin-8259448.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/image/image/free-icon-location-pin-8259448_processed.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_5.setIcon(icon4)
         self.pushButton_5.setIconSize(QSize(32, 32))
 
@@ -93,7 +94,7 @@ class Ui_MainWindow(object):
         self.eventBt.setObjectName(u"eventBt")
         self.eventBt.setFont(font)
         icon5 = QIcon()
-        icon5.addFile(u":/image/image/free-icon-log-file-format-8760478.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/image/image/free-icon-log-file-format-8760478_processed.png", QSize(), QIcon.Normal, QIcon.Off)
         self.eventBt.setIcon(icon5)
         self.eventBt.setIconSize(QSize(32, 32))
 
@@ -103,7 +104,7 @@ class Ui_MainWindow(object):
         self.OpenAllBt.setObjectName(u"OpenAllBt")
         self.OpenAllBt.setFont(font)
         icon6 = QIcon()
-        icon6.addFile(u":/image/image/free-icon-door-9050998.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/image/image/free-icon-door-9050998_processed.png", QSize(), QIcon.Normal, QIcon.Off)
         self.OpenAllBt.setIcon(icon6)
         self.OpenAllBt.setIconSize(QSize(32, 32))
 
@@ -113,7 +114,7 @@ class Ui_MainWindow(object):
         self.ByeBt.setObjectName(u"ByeBt")
         self.ByeBt.setFont(font)
         icon7 = QIcon()
-        icon7.addFile(u":/image/image/free-icon-end-5129674.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u":/image/image/free-icon-end-5129674_processed.png", QSize(), QIcon.Normal, QIcon.Off)
         self.ByeBt.setIcon(icon7)
         self.ByeBt.setIconSize(QSize(32, 32))
 
@@ -138,10 +139,26 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(7, __qtablewidgetitem7)
-        if (self.tableWidget.rowCount() < 16):
-            self.tableWidget.setRowCount(16)
+        if (self.tableWidget.rowCount() < 5):
+            self.tableWidget.setRowCount(5)
         self.tableWidget.setObjectName(u"tableWidget")
+<<<<<<< HEAD
         self.tableWidget.setGeometry(QRect(70, 120, 831, 631))
+=======
+        self.tableWidget.setGeometry(QRect(30, 90, 951, 781))
+        self.tableWidget.setMinimumSize(QSize(951, 781))
+        self.tableWidget.setMaximumSize(QSize(951, 781))
+        palette = QPalette()
+        brush = QBrush(QColor(170, 255, 127, 255))
+        brush.setStyle(Qt.SolidPattern)
+        palette.setBrush(QPalette.Active, QPalette.Base, brush)
+        palette.setBrush(QPalette.Active, QPalette.Window, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.Base, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.Window, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.Base, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.Window, brush)
+        self.tableWidget.setPalette(palette)
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
         self.tableWidget.setFont(font)
         self.tableWidget.setStyleSheet(u"QHeaderView::section{\n"
 "font-weight:bold;\n"
@@ -157,6 +174,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setFrameShape(QFrame.Shape.Box)
         self.tableWidget.setFrameShadow(QFrame.Shadow.Plain)
         self.tableWidget.setLineWidth(3)
+        self.tableWidget.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
         self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
         self.tableWidget.setAutoScrollMargin(26)
         self.tableWidget.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
@@ -164,7 +182,13 @@ class Ui_MainWindow(object):
         self.tableWidget.setShowGrid(True)
         self.tableWidget.setGridStyle(Qt.PenStyle.DotLine)
         self.tableWidget.setSortingEnabled(False)
+<<<<<<< HEAD
         self.tableWidget.setColumnCount(8)
+=======
+        self.tableWidget.setRowCount(5)
+        self.tableWidget.setColumnCount(8)
+        self.tableWidget.horizontalHeader().setMinimumSectionSize(38)
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
         MainWindow.setCentralWidget(self.centralwidget)
         self.tableWidget.raise_()
         self.horizontalLayoutWidget.raise_()
@@ -178,8 +202,8 @@ class Ui_MainWindow(object):
         self.dockWidget_2.setSizePolicy(sizePolicy)
         self.dockWidget_2.setMinimumSize(QSize(200, 150))
         self.dockWidget_2.setMaximumSize(QSize(200, 150))
-        palette = QPalette()
-        self.dockWidget_2.setPalette(palette)
+        palette1 = QPalette()
+        self.dockWidget_2.setPalette(palette1)
         self.dockWidget_2.setAutoFillBackground(False)
         self.dockWidget_2.setStyleSheet(u"\n"
 "dockWidget_2{background-color:green;}\n"
@@ -213,7 +237,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\ud1b5\uc2e0 \uc124\uc815", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u" \uc815 \uc9c0", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u" \uc2dc \uc791", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\uc704\uce58 \uc124\uc815", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\ub3c4\uc5b4 \uc124\uc815", None))
         self.eventBt.setText(QCoreApplication.translate("MainWindow", u" \uc774 \ubca4 \ud2b8", None))
         self.OpenAllBt.setText(QCoreApplication.translate("MainWindow", u"\uc804\uccb4 \uac1c\ubc29", None))
         self.ByeBt.setText(QCoreApplication.translate("MainWindow", u" \uc885 \ub8cc", None))

@@ -1,12 +1,26 @@
 <RCC>
   <qresource prefix="image">
+<<<<<<< HEAD
     <file>image/RedOff.png</file>
     <file>image/RedOn.png</file>
+=======
+    <file>image/free-icon-door-9050998_processed.png</file>
+    <file>image/free-icon-end-5129674_processed.png</file>
+    <file>image/free-icon-gears-416153_processed.png</file>
+    <file>image/free-icon-location-pin-8259448_processed.png</file>
+    <file>image/free-icon-log-file-format-8760478_processed.png</file>
+    <file>image/free-icon-right-arrows-6776011_processed.png</file>
+    <file>image/GreenOff.png</file>
+    <file>image/GreenOn.png</file>
+    <file>image/link_processed.png</file>
+    <file>image/link1.png</file>
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
     <file>image/play-button.png</file>
+    <file>image/RedOff.png</file>
+    <file>image/RedOn.png</file>
+    <file>image/server_setting.png</file>
+    <file>image/settings.png</file>
     <file>image/stop.png</file>
     <file>image/stop-button.png</file>
-    <file>image/link.png</file>
-    <file>image/link1.png</file>
-    <file>image/settings.png</file>
   </qresource>
 </RCC>

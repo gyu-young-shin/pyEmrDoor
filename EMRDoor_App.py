@@ -120,6 +120,7 @@ class MainWindow(QMainWindow):
         
         # Adjust the row and column sizes to fit the label
    
+<<<<<<< HEAD
 
         # Insert the QLabel into the QTableWidget at position (0, 0)
         # self.ui.tableWidget.setCellWidget(0, 0, label)
@@ -152,6 +153,19 @@ class MainWindow(QMainWindow):
                 # label.setContentsMargins(5,5,5,5)
                 self.ui.tableWidget.setCellWidget(i, j, label)
                 self.ui.tableWidget.setRowHeight(i, desired_size.height()+5)
+=======
+        self.item = QTableWidgetItem()
+        pixmap = QPixmap(u":/image/image/RedOff.png")  # Replace with the path to your image
+        self.item.setIcon(QIcon(pixmap))
+        self.item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)  # Center the item in the cell
+        self.ui.tableWidget.setItem(0, 1, self.item)
+        self.ui.tableWidget.setIconSize(QSize(32, 32))  # Set icon size
+        self.ui.tableWidget.setRowHeight(0, 40)  # Set row height
+        self.ui.tableWidget.setColumnWidth(1, 40)  # Set column width
+
+        # Additionally, if you want to center the icon itself, set the horizontal and vertical alignment of the item:
+        self.ui.tableWidget.item(0, 1).setTextAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
 
         
         # 버튼 Enable setting 

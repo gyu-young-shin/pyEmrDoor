@@ -24,7 +24,10 @@
   </property>
   <property name="windowIcon">
    <iconset resource="emrdoor_imag.qrc">
-    <normaloff>:/image/image/link.png</normaloff>:/image/image/link.png</iconset>
+    <normaloff>:/image/image/server_setting.png</normaloff>:/image/image/server_setting.png</iconset>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="horizontalLayoutWidget">
@@ -126,11 +129,16 @@
         </font>
        </property>
        <property name="text">
-        <string>위치 설정</string>
+        <string>도어 설정</string>
        </property>
        <property name="icon">
+<<<<<<< HEAD
         <iconset>
          <normaloff>:/image/image/free-icon-location-pin-8259448.png</normaloff>:/image/image/free-icon-location-pin-8259448.png</iconset>
+=======
+        <iconset resource="emrdoor_imag.qrc">
+         <normaloff>:/image/image/free-icon-location-pin-8259448_processed.png</normaloff>:/image/image/free-icon-location-pin-8259448_processed.png</iconset>
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
        </property>
        <property name="iconSize">
         <size>
@@ -151,8 +159,13 @@
         <string> 이 벤 트</string>
        </property>
        <property name="icon">
+<<<<<<< HEAD
         <iconset>
          <normaloff>:/image/image/free-icon-log-file-format-8760478.png</normaloff>:/image/image/free-icon-log-file-format-8760478.png</iconset>
+=======
+        <iconset resource="emrdoor_imag.qrc">
+         <normaloff>:/image/image/free-icon-log-file-format-8760478_processed.png</normaloff>:/image/image/free-icon-log-file-format-8760478_processed.png</iconset>
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
        </property>
        <property name="iconSize">
         <size>
@@ -173,8 +186,13 @@
         <string>전체 개방</string>
        </property>
        <property name="icon">
+<<<<<<< HEAD
         <iconset>
          <normaloff>:/image/image/free-icon-door-9050998.png</normaloff>:/image/image/free-icon-door-9050998.png</iconset>
+=======
+        <iconset resource="emrdoor_imag.qrc">
+         <normaloff>:/image/image/free-icon-door-9050998_processed.png</normaloff>:/image/image/free-icon-door-9050998_processed.png</iconset>
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
        </property>
        <property name="iconSize">
         <size>
@@ -195,8 +213,13 @@
         <string> 종 료</string>
        </property>
        <property name="icon">
+<<<<<<< HEAD
         <iconset>
          <normaloff>:/image/image/free-icon-end-5129674.png</normaloff>:/image/image/free-icon-end-5129674.png</iconset>
+=======
+        <iconset resource="emrdoor_imag.qrc">
+         <normaloff>:/image/image/free-icon-end-5129674_processed.png</normaloff>:/image/image/free-icon-end-5129674_processed.png</iconset>
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
        </property>
        <property name="iconSize">
         <size>
@@ -211,11 +234,94 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>70</x>
       <y>120</y>
       <width>831</width>
       <height>631</height>
+=======
+      <x>30</x>
+      <y>90</y>
+      <width>951</width>
+      <height>781</height>
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>951</width>
+      <height>781</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>951</width>
+      <height>781</height>
+     </size>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>170</red>
+          <green>255</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>170</red>
+          <green>255</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>170</red>
+          <green>255</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>170</red>
+          <green>255</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>170</red>
+          <green>255</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>170</red>
+          <green>255</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
     </property>
     <property name="font">
      <font>
@@ -244,6 +350,9 @@ background-color: #F4F9FA;
     <property name="lineWidth">
      <number>3</number>
     </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOn</enum>
+    </property>
     <property name="sizeAdjustPolicy">
      <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
     </property>
@@ -268,6 +377,7 @@ background-color: #F4F9FA;
     <property name="sortingEnabled">
      <bool>false</bool>
     </property>
+<<<<<<< HEAD
     <property name="columnCount">
      <number>8</number>
     </property>
@@ -282,6 +392,17 @@ background-color: #F4F9FA;
     <row/>
     <row/>
     <row/>
+=======
+    <property name="rowCount">
+     <number>5</number>
+    </property>
+    <property name="columnCount">
+     <number>8</number>
+    </property>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>38</number>
+    </attribute>
+>>>>>>> eb94b4c7a8cb73d97e5730e6117a92f534196ecc
     <row/>
     <row/>
     <row/>
